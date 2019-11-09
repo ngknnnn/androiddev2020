@@ -10,7 +10,10 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *YourNameHere*
-* ID: *YourIdHere*
-* Group ID: *Your Group ID here*
+* Name: Nguyen Khanh Nam
+* ID: USTHBI8-122
+* Group ID: 9
+
+
+
 
