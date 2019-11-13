@@ -6,12 +6,24 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
 
+
+
 public class WeatherActivity extends AppCompatActivity{
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i("Running","");
+        // load the layout
+        setContentView(R.layout.activity_weather);
+        Log.i("StatusWeatherLog","method running...");
+
+        // Create a new Fragment to be placed in the activity
+        ForecastFragment firstFragment = new ForecastFragment();
+
+        // Add the fragment to the 'container' FrameLayout
+        getSupportFragmentManager().beginTransaction().add(R.id.container, firstFragment).commit();
+
+
     }
 
     @Override
@@ -44,7 +56,4 @@ public class WeatherActivity extends AppCompatActivity{
         Log.i("Running","Remuse");
     }
 }
-
-
-
 
