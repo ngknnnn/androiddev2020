@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">USTH_Weather</string>
-
-
-    <string name="new_fragment"> Khanh Nam</string>
+    <string name="ImageView1">Icon</string>
+    <string name="Text1">Thursday</string>
 </resources>
