@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">USTH_Weather</string>
+    <string name="ImageView2">Icon</string>
     <string name="ImageView1">Icon</string>
-    <string name="Text1">Thursday</string>
+    <string name="Text1">Mon</string>
+    <string name="Text2">Mon</string>
+    <string name="Text3">Mon</string>
+    <string name="Text4"></string>
+
+
 </resources>

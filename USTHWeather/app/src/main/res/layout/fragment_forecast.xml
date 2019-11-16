@@ -1,31 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:background="#"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#99CC99"
+        android:orientation="horizontal"
+        tools:context=".ForecastFragment">
+
+        <TextView
+
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:text="@string/Text1" />
+        <ImageView
+
+            android:layout_width="129dp"
+            android:layout_height="67dp"
+            android:layout_weight="0"
+            android:contentDescription="@string/Text1"
+            android:src="@drawable/snowman"
+            android:visibility="visible"
+            tools:visibility="visible" />
+        <TextView
+
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="Snowny" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#99CC99"
+        android:orientation="horizontal"
+        tools:context=".ForecastFragment">
+
+        <TextView
+
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:text="Tues" />
+        <ImageView
+
+            android:layout_width="129dp"
+            android:layout_height="67dp"
+            android:layout_weight="0"
+            android:contentDescription="@string/Text1"
+            android:src="@drawable/rain"
+            android:visibility="visible"
+            tools:visibility="visible" />
+        <TextView
+
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="Rainny Dayy" />
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:background="#99CC99"
+    android:orientation="horizontal"
     tools:context=".ForecastFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/Text1"
-        android:layout_width="250dp"
-        android:layout_height="match_parent"
-        android:text="@string/Text1"
-        android:paddingLeft="20dp"
-        android:paddingBottom="20dp"
-        android:padding="20dp"
+        <TextView
 
-        />
-
+            android:layout_width="101dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:text="Wed" />
     <ImageView
-        android:id="@+id/ImageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+        android:layout_width="129dp"
+        android:layout_height="67dp"
+        android:layout_weight="0"
         android:contentDescription="@string/Text1"
-        android:src="@drawable/snowman"
-        tools:visibility="visible"
-        android:layout_weight="0.81"
-        />
+        android:src="@drawable/snowflake"
+        android:visibility="visible"
+        tools:visibility="visible" />
+    <TextView
+
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:text="Having snowflake" />
 </LinearLayout>
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:background="#99CC99"
+    android:orientation="horizontal"
+    tools:context=".ForecastFragment">
+
+        <TextView
+
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:text="Thurs" />
+    <ImageView
+
+        android:layout_width="129dp"
+        android:layout_height="67dp"
+        android:layout_weight="0"
+        android:contentDescription="@string/Text1"
+        android:src="@drawable/storm"
+        android:visibility="visible"
+        tools:visibility="visible" />
+    <TextView
+
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:text="Stormingg" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#99CC99"
+        android:orientation="horizontal"
+        tools:context=".ForecastFragment">
+
+        <TextView
+
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:text="Fri" />
+
+        <ImageView
+
+            android:layout_width="130dp"
+            android:layout_height="67dp"
+            android:layout_weight="0"
+            android:contentDescription="@string/Text1"
+            android:src="@drawable/wind"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <TextView
+
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="Winny day" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#99CC99"
+        android:orientation="horizontal"
+        tools:context=".ForecastFragment">
+
+        <TextView
+
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:text="@string/Text1" />
+
+        <ImageView
+
+            android:layout_width="130dp"
+            android:layout_height="67dp"
+            android:layout_weight="0"
+            android:contentDescription="@string/Text1"
+            android:src="@drawable/sunny"
+            android:visibility="visible"
+            tools:visibility="visible" />
+        <TextView
+
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="Very Hott" />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
