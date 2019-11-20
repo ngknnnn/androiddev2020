@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/fragment_forecast"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="#"
+
     android:layout_marginStart="10dp"
     android:layout_marginLeft="10dp"
     android:layout_marginTop="10dp"
@@ -19,7 +20,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="#99CC99"
+        android:background="#F5FFFA"
         android:orientation="horizontal"
         tools:context=".ForecastFragment">
 
@@ -48,7 +49,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="#99CC99"
+        android:background="#F5FFFA"
         android:orientation="horizontal"
         tools:context=".ForecastFragment">
 
@@ -77,7 +78,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_weight="1"
-    android:background="#99CC99"
+    android:background="#F5FFFA"
     android:orientation="horizontal"
     tools:context=".ForecastFragment">
 
@@ -106,7 +107,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_weight="1"
-    android:background="#99CC99"
+    android:background="#F5FFFA"
     android:orientation="horizontal"
     tools:context=".ForecastFragment">
 
@@ -135,7 +136,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="#99CC99"
+        android:background="#F5FFFA"
         android:orientation="horizontal"
         tools:context=".ForecastFragment">
 
@@ -166,7 +167,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="#99CC99"
+        android:background="#F5FFFA"
         android:orientation="horizontal"
         tools:context=".ForecastFragment">
 
