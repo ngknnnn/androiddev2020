@@ -1,12 +1,11 @@
 package vn.edu.usth.weather;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.Log;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 
 public class WeatherActivity extends AppCompatActivity{
@@ -38,6 +37,11 @@ public class WeatherActivity extends AppCompatActivity{
         // Add the fragment to the 'container' FrameLayout
         getSupportFragmentManager().beginTransaction().add(R.id.number1, firstFragment).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.number2, secondFragment).commit();
+
+        PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        pager.setOffscreenPageLimit(3);
+        pager.setAdapter(adapter);
 
     }
 
