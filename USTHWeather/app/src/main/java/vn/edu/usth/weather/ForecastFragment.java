@@ -13,9 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class ForecastFragment extends Fragment {
-    public  ForecastFragment() {
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment

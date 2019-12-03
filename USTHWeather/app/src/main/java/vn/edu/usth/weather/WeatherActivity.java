@@ -7,6 +7,8 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.material.tabs.TabLayout;
+
 
 public class WeatherActivity extends AppCompatActivity{
 
@@ -30,18 +32,14 @@ public class WeatherActivity extends AppCompatActivity{
 
         // Create a new Fragment to be placed in the activity
         setContentView(R.layout.activity_main);
-        ForecastFragment firstFragment = new ForecastFragment();
-        WeatherFragment secondFragment = new WeatherFragment();
-
-
-        // Add the fragment to the 'container' FrameLayout
-        getSupportFragmentManager().beginTransaction().add(R.id.number1, firstFragment).commit();
-        getSupportFragmentManager().beginTransaction().add(R.id.number2, secondFragment).commit();
 
         PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
-        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        ViewPager pager = findViewById(R.id.pager);
         pager.setOffscreenPageLimit(3);
         pager.setAdapter(adapter);
+
+        TabLayout tabLayout = findViewById(R.id.tab);
+        tabLayout.setupWithViewPager(pager);
 
     }
 
