@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:id="@+id/fragment_forecast2"
-    android:background="#C1FFC1"
+    android:background="@color/colorPrimary"
     android:layout_margin="8dp"
     >
 
@@ -11,18 +11,20 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="  31C\n Stormming" />
+        android:layout_height="53dp"
+        android:layout_margin="10dp"
+        android:text="        31C \n Stormming" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="158dp"
-        android:layout_height="123dp"
+        android:layout_width="192dp"
+        android:layout_height="142dp"
         app:srcCompat="@drawable/cellphone" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="113dp"
+        android:layout_width="match_parent"
         android:layout_height="35dp"
+        android:layout_margin="10dp"
         android:text="CANNES \n Paris" />
 </LinearLayout>
