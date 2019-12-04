@@ -3,14 +3,22 @@ package vn.edu.usth.weather;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
+import android.os.Environment;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Locale;
 import android.util.Log;
 
 import com.google.android.material.tabs.TabLayout;
 
 
 public class WeatherActivity extends AppCompatActivity{
+    MediaPlayer music;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -41,6 +49,41 @@ public class WeatherActivity extends AppCompatActivity{
         TabLayout tabLayout = findViewById(R.id.tab);
         tabLayout.setupWithViewPager(pager);
 
+        //copy file to sdcard0
+        copyFileToExteralStorage(R.raw.songg,"songg.mp3");
+
+        music = MediaPlayer.create(WeatherActivity.this,R.raw.songg);
+        music.start();
+        music.setLooping(true);
+
+    }
+
+    public void copyFileToExteralStorage(int resourceId, String resourceName){
+        String pathSDCard = Environment.getExternalStorageDirectory() + "/Android/data/vn.edu.usth.weather/" + resourceName;
+
+        try{
+            InputStream inputStream = getResources().openRawResource(resourceId);
+            FileOutputStream outputStream = null;
+            outputStream = new FileOutputStream(pathSDCard);
+            byte[] buff = new byte[1024];
+            int read = 0;
+            try{
+                while ((read = inputStream.read(buff))>0){
+                    outputStream.write(buff,0,read);
+                }
+            }finally {
+                inputStream.close();
+                outputStream.close();
+            }
+
+
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 
 
@@ -55,24 +98,28 @@ public class WeatherActivity extends AppCompatActivity{
     protected void onStop() {
         super.onStop();
         Log.i("Running","Stop");
+        music.pause();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.i("Running","Destroy");
+        music.stop();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.i("Running","Pause");
+        music.pause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Log.i("Running","Remuse");
+        music.start();
     }
 }
 
