@@ -11,11 +11,13 @@
         android:id="@+id/fragmentWeather"
         android:name="vn.edu.usth.weather.WeatherFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
 
     <fragment
         android:id="@+id/fragmentForcast"
         android:name="vn.edu.usth.weather.ForecastFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
 </LinearLayout>
