@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.os.Environment;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -21,12 +24,24 @@ import android.widget.Toast;
 import com.google.android.material.tabs.TabLayout;
 
 
-public class WeatherActivity extends AppCompatActivity{
+public class WeatherActivity extends AppCompatActivity {
     MediaPlayer music;
+
+
+
+
+
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final Handler handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                String content = msg.getData().getString("server_response");
+                Toast.makeText(getApplicationContext(), content, Toast.LENGTH_LONG).show();
+            }
+        };
         // load the layout
 //        setContentView(R.layout.fragment_forecast);
 //        LinearLayout ll = new LinearLayout(this);
@@ -59,6 +74,27 @@ public class WeatherActivity extends AppCompatActivity{
         music = MediaPlayer.create(WeatherActivity.this,R.raw.songg);
         music.start();
         music.setLooping(true);
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(4000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                Bundle bundle = new Bundle();
+                bundle.putString("server_response", "some sample JSON here");
+                Message message = new Message();
+                message.setData(bundle);
+                handler.sendMessage(message);
+
+            }
+        });
+
+        thread.start();
+
 
     }
 
@@ -100,7 +136,7 @@ public class WeatherActivity extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {
             case R.id.action_refresh:
-                music.seekTo(0);
+                music.seekTo(4);
                 Toast.makeText(getApplicationContext(),"Once more time !",Toast.LENGTH_LONG).show();
                 music.start();
 // do something when search is pressed here
