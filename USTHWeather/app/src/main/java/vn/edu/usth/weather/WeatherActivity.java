@@ -3,6 +3,8 @@ package vn.edu.usth.weather;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
+import android.content.Intent;
 import android.os.Environment;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -11,8 +13,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Locale;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -86,6 +90,31 @@ public class WeatherActivity extends AppCompatActivity{
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case R.id.action_refresh:
+                music.seekTo(0);
+                Toast.makeText(getApplicationContext(),"Once more time !",Toast.LENGTH_LONG).show();
+                music.start();
+// do something when search is pressed here
+                return true;
+            case R.id.item_1:
+                Intent intent = new Intent(WeatherActivity.this, PreActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return  super.onOptionsItemSelected(item);
+
+
+    }
+
 
 
     @Override
@@ -105,7 +134,8 @@ public class WeatherActivity extends AppCompatActivity{
     protected void onDestroy() {
         super.onDestroy();
         Log.i("Running","Destroy");
-        music.stop();
+        music.release();
+        music = null;
     }
 
     @Override
